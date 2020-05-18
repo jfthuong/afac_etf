@@ -2,6 +2,8 @@ FROM gitpod/workspace-full
                     
 USER gitpod
 
+RUN python3 -m pip install -r requirements.txt
+
 # Install custom tools, runtime, etc. using apt-get
 # For example, the command below would install "bastet" - a command line tetris clone:
 #

@@ -1,0 +1,13 @@
+<html>
+    <header>
+        <title>History of ETF</title>
+    </header>
+
+    <body>
+        <h1>List of ETFs: {{ etfs }}</h1>
+        {% for duration, svg in list_svg %}
+        <h2>ETFs for the last {{ duration }}</h2>
+        {{ svg }}
+        {%- endfor -%}
+    </body>
+</html>

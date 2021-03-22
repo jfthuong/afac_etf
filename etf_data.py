@@ -44,7 +44,7 @@ def translate_header(chinese: str) -> str:
         "日增长率": "Daily Growth",
         "申购状态": "Purchase Status",
         "赎回状态": "Selling Status",
-        "分红送配": "Distribution of dividends",
+        "分红送配": "Dividends",
     }
     return mapping.get(chinese, chinese)
 
@@ -176,7 +176,7 @@ class ETFData:
         df = self.df[self.df["Date"] >= ref_date]
         if not df.empty:
             ref_value = float(df.iloc[0][VALUE_KEY])
-            df.loc["Relative Net Value"] = df[VALUE_KEY] / ref_value - 1
+            df["Relative Net Value"] = df[VALUE_KEY] / ref_value - 1
         df["ETF"] = self.code
         return df
 
